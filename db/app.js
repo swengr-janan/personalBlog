@@ -97,8 +97,7 @@ app.post("/api/posts/", upload.single('post-image'), (req, res)=>{
 })
 
 app.put("/api/posts/", upload.single('post-image'), (req, res)=>{
-    // const post_image = req.body.path;
-    // const foundImage = postData.getIndividualBlog(post_image);
+    
     const editedPost = {
         "id": req.body.id,
         "title": req.body.title,
