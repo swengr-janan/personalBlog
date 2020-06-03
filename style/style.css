@@ -187,12 +187,91 @@ header::after{
 
 footer {
     min-height: 100px;
-    background-color: #eaecee70;
-    color: #929eaa;
+    background-color: #303036;
+    color: #d3d3d3;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    margin-bottom: 10px;
     font-size: 14px;
+}
+
+footer h1{
+    text-align: center;
+}
+
+.text-signature span{
+    color: #05f7ff;
+}
+.socials a{
+    text-decoration: none;
+    color: #d3d3d3;
+    border: 1px solid gray;
+    width: 45px;
+    height: 41px;
+    padding-top: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.socials a:hover{
+    border: 1px solid #05f7ff;
+    color: #05f7ff;
+    transition: all .3s;
+}
+
+
+
+@media(max-width:800px){
+
+    .home-page{
+        position: relative;
+        
+    }
+    .profile-image{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-image: url(../assets/profile.jpg);
+        background-size: cover;
+    }
+    
+    .profile-name, .title{
+        margin-top: 8px;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    
+    .profile-bio{
+        margin-top: 8px;
+    }
+    .main-container{
+        min-width: 300px;
+        min-height: 300px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .post-image{
+        flex-basis: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .post-content{
+        flex-basis: 50%;
+        padding: 12px;
+    }
+
+    h4{
+        font-size: 20px;
+    }
+
+    .post-details{
+        font-size: 12px;
+    }
 }

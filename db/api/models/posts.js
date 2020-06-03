@@ -34,19 +34,43 @@ class Post {
     updatePost(editedPost){
         const currentPosts = this.readData();
         let postIndex = currentPosts.findIndex((post)=> post.id === editedPost.id)
+
+        const foundImage = currentPosts.find((post) => post.id === editedPost.id);
+        const imagePath = foundImage.post_image;
+
         if(postIndex > -1){
             currentPosts.splice(postIndex, 1, editedPost);
         }
+
+        try{
+            fs.unlinkSync(imagePath)
+            //file removed
+        }catch(err) {
+            console.error(err)
+        }
+
         this.storeData(currentPosts);
+
     }
 
     deletePost(postId){
         const currentPosts = this.readData();
         let postIndex = currentPosts.findIndex((post)=> post.id === postId)
+
+        const foundImage = currentPosts.find((post) => post.id === postId);
+        const imagePath = foundImage.post_image;
+
         if(postIndex > -1){
             currentPosts.splice(postIndex, 1);
         }
         this.storeData(currentPosts);
+
+        try{
+            fs.unlinkSync(imagePath)
+            //file removed
+        }catch(err) {
+            console.error(err)
+        }
     }
 
     readData(){
